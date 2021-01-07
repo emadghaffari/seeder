@@ -107,6 +107,12 @@ func Job() string {
 	return job[l]
 }
 
+// RandomArray from elements
+func RandomArray(items []interface{}) interface{} {
+	l := random(0, len(items))
+	return items[l]
+}
+
 // random between numbers
 func random(min, max int) int {
 	if min > max {
