@@ -2,6 +2,7 @@ package seeder
 
 import (
 	"math/rand"
+	"reflect"
 	"time"
 )
 
@@ -108,9 +109,15 @@ func Job() string {
 }
 
 // RandomArray from elements
-func RandomArray(items []interface{}) interface{} {
-	l := random(0, len(items))
-	return items[l]
+func RandomArray(items interface{}) interface{} {
+	switch reflect.TypeOf(items).Kind() {
+	case reflect.Slice:
+		s := reflect.ValueOf(items)
+		l := random(0, s.Len())
+		return s.Index(l)
+	default:
+		return nil
+	}
 }
 
 // random between numbers
