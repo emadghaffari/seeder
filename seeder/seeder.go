@@ -1,6 +1,7 @@
 package seeder
 
 import (
+	"fmt"
 	"math/rand"
 	"reflect"
 	"time"
@@ -98,8 +99,20 @@ func Username() string {
 
 // Avatar func
 func Avatar() string {
-	l := Random(0, len(avatar))
-	return avatar[l]
+
+	to := Random(0, len(topTypeOptions))
+	ac := Random(0, len(accessoriesTypeOptions))
+	fa := Random(0, len(facialHairTypeOptions))
+	fas := Random(0, len(facialHairColorOptions))
+	cl := Random(0, len(clotheTypeOptions))
+	ey := Random(0, len(eyeTypeOptions))
+	eys := Random(0, len(eyebrowTypeOptions))
+	mo := Random(0, len(mouthTypeOptions))
+	sk := Random(0, len(skinColorOptions))
+	ha := Random(0, len(hairColorTypes))
+	cls := Random(0, len(clotheColorOptions))
+
+	return fmt.Sprintf("https://avataaars.io/?accessoriesType=%s&avatarStyle=Circle&clotheColor=%s&clotheType=%s&eyeType=%s&eyebrowType=%s&facialHairColor=%s&facialHairType=%s&hairColor=%s&mouthType=%s&skinColor=%s&topType=%s", accessoriesTypeOptions[ac], clotheColorOptions[cls], clotheTypeOptions[cl], eyeTypeOptions[ey], eyebrowTypeOptions[eys], facialHairColorOptions[fas], facialHairTypeOptions[fa], hairColorTypes[ha], mouthTypeOptions[mo], skinColorOptions[sk], topTypeOptions[to])
 }
 
 // Job func
