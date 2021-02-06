@@ -145,6 +145,17 @@ func RandomArray(items interface{}) interface{} {
 	}
 }
 
+// RandomHasher generate a random of string
+func RandomHasher(lenght int) string {
+	letters := []int32("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789-&()_")
+	rand.Seed(time.Now().UnixNano())
+	b := make([]int32, lenght)
+	for i := range b {
+		b[i] = letters[rand.Intn(len(letters))]
+	}
+	return string(b)
+}
+
 // Random between numbers
 func Random(min, max int) int {
 	if min > max {
