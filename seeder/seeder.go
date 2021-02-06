@@ -146,7 +146,7 @@ func RandomArray(items interface{}) interface{} {
 }
 
 // RandomHasher generate a random of string
-func RandomHasher(lenght int) string {
+func RandomHash(lenght int) string {
 	letters := []int32("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789-&()_")
 	rand.Seed(time.Now().UnixNano())
 	b := make([]int32, lenght)
