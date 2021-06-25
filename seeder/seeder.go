@@ -7,94 +7,114 @@ import (
 	"time"
 )
 
+var (
+	lang = "fa"
+)
+
+func SetLang(str string) error {
+
+	if str == "fa" {
+		lang = "fa"
+		return nil
+	}
+
+	if str == "en" {
+		lang = "en"
+		return nil
+	}
+
+	return fmt.Errorf("invalid lang[fa,en]")
+
+}
+
 // Name func
 func Name() string {
-	l := Random(0, len(name))
-	return name[l]
+	l := Random(0, len(name[lang]))
+	return name[lang][l]
 }
 
 // Email func
 func Email() string {
-	l := Random(0, len(email))
-	return email[l]
+	l := Random(0, len(email[lang]))
+	return email[lang][l]
 }
 
 // Gender func
 func Gender() string {
-	l := Random(0, len(gender))
-	return gender[l]
+	l := Random(0, len(gender[lang]))
+	return gender[lang][l]
 }
 
 // Address func
 func Address() string {
-	l := Random(0, len(address))
-	return address[l]
+	l := Random(0, len(address[lang]))
+	return address[lang][l]
 }
 
 // Animal func
 func Animal() string {
-	l := Random(0, len(animal))
-	return animal[l]
+	l := Random(0, len(animal[lang]))
+	return animal[lang][l]
 }
 
 // Car func
 func Car() string {
-	l := Random(0, len(car))
-	return car[l]
+	l := Random(0, len(car[lang]))
+	return car[lang][l]
 }
 
 // Color func
 func Color() string {
-	l := Random(0, len(color))
-	return color[l]
+	l := Random(0, len(color[lang]))
+	return color[lang][l]
 }
 
 // Country func
 func Country() string {
-	l := Random(0, len(country))
-	return country[l]
+	l := Random(0, len(country[lang]))
+	return country[lang][l]
 }
 
 // Image func
 func Image() string {
-	l := Random(0, len(image))
-	return image[l]
+	l := Random(0, len(image[lang]))
+	return image[lang][l]
 }
 
 // Phone func
 func Phone() string {
-	l := Random(0, len(phone))
-	return phone[l]
+	l := Random(0, len(phone[lang]))
+	return phone[lang][l]
 }
 
 // URL func
 func URL() string {
-	l := Random(0, len(url))
-	return url[l]
+	l := Random(0, len(url[lang]))
+	return url[lang][l]
 }
 
 // Password func
 func Password() string {
-	l := Random(0, len(password))
-	return password[l]
+	l := Random(0, len(password[lang]))
+	return password[lang][l]
 }
 
 // Latitude func
 func Latitude() float64 {
-	l := Random(0, len(latitude))
-	return latitude[l]
+	l := Random(0, len(latitude[lang]))
+	return latitude[lang][l]
 }
 
 // Longitude func
 func Longitude() float64 {
-	l := Random(0, len(longitude))
-	return longitude[l]
+	l := Random(0, len(longitude[lang]))
+	return longitude[lang][l]
 }
 
 // Username func
 func Username() string {
-	l := Random(0, len(username))
-	return username[l]
+	l := Random(0, len(username[lang]))
+	return username[lang][l]
 }
 
 // Avatar func
@@ -117,20 +137,20 @@ func Avatar() string {
 
 // Job func
 func Job() string {
-	l := Random(0, len(job))
-	return job[l]
+	l := Random(0, len(job[lang]))
+	return job[lang][l]
 }
 
 // Title func
 func Title() string {
-	l := Random(0, len(title))
-	return title[l]
+	l := Random(0, len(title[lang]))
+	return title[lang][l]
 }
 
 // Text func
 func Text() string {
-	l := Random(0, len(text))
-	return text[l]
+	l := Random(0, len(text[lang]))
+	return text[lang][l]
 }
 
 // RandomArray from elements
