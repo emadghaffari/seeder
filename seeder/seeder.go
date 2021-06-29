@@ -161,7 +161,7 @@ func RandomArray(items interface{}) interface{} {
 	case reflect.Slice:
 		s := reflect.ValueOf(items)
 		l := Random(0, s.Len())
-		return s.Index(l)
+		return s.Index(l).Interface()
 	default:
 		return nil
 	}
