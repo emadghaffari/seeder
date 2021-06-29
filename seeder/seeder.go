@@ -188,6 +188,6 @@ func Random(min, max int) int {
 	return Random
 }
 
-func NewUUID() string {
-	return uuid.Must(uuid.NewRandom()).String()
+func NewUUID() uuid.UUID {
+	return uuid.Must(uuid.NewRandom())
 }
