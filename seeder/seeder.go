@@ -5,6 +5,8 @@ import (
 	"math/rand"
 	"reflect"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 var (
@@ -184,4 +186,8 @@ func Random(min, max int) int {
 	rand.Seed(time.Now().UnixNano())
 	Random := (rand.Intn((max - min)) + min)
 	return Random
+}
+
+func NewUUID() string {
+	return uuid.Must(uuid.NewRandom()).String()
 }
